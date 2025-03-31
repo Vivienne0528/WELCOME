@@ -9,19 +9,6 @@
   padding: 0;
 }
 
-/* 小屏幕 */
-@media screen and (max-width: 768px) {
-  main{
-    flex-direction: column;
-    align-items: center;
-  }
-  .login-section{ 
-    /* display: block; */
-    padding: 8px;
-    /* 为什么不起作用 */
-  }
-}
-
  main {
   display: flex;
   height: 100vh;
@@ -141,4 +128,15 @@
 
 .login-form .message{
 color: red;
+}
+
+/* 小屏幕 */
+@media screen and (max-width: 768px) {
+  main{
+    flex-direction: column;
+    align-items: center;
+  }
+  .login-section{ 
+    padding: 8px;
+  }
 }
