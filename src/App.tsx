@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
+import { User } from './type';
 function App() {
-  const [user, setUser] = useState({
+  const [user, setUser] = useState<User>({
     email: "",
     password: ""
   })
@@ -12,14 +13,14 @@ function App() {
   const validPassword = (password: string) => {
     return password.length >= 6
   }
-  const registerUsers = JSON.parse(localStorage.getItem("users") || '[]')
+  const registerUsers: User[] = JSON.parse(localStorage.getItem("users") || '[]')
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault()
     if (!validEmail(user.email) && !validPassword(user.password)) {
-      alert("Please enter a valid email address and password.")
+      alert("Please enter a valid email address (e.g., user@example.com) and password with at least 6 characters.")
     }
     else if (!validEmail(user.email)) {
-      alert("Please enter a valid email address.")
+      alert("Please enter a valid email address (e.g., user@example.com).")
     }
     else if (registerUsers.some((existUser: { email: string; }) => existUser.email === user.email)) {
       alert("Email already exists, please sign in.")
@@ -37,14 +38,13 @@ function App() {
     })
   }
 
-
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    if (registerUsers.some((existUser: { email: string; password: string; }) => existUser.email === user.email && existUser.password === user.password)) {
+    if (registerUsers.some((existUser: User) => existUser.email === user.email && existUser.password === user.password)) {
       alert("Login successfully")
     } else {
       if (!registerUsers.some((existUser: { email: string; }) => existUser.email === user.email)) {
-        alert("Email does not exist, please sign up.")
+        alert("Email does not exist, please register.")
       } else {
         alert("Wrong password, please try again.")
       }
