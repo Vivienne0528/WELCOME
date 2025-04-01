@@ -84,7 +84,16 @@
 .login-form a{
   color: #000;
   font-weight: 600;
-
+}
+.message {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+.message.error{
+  color: red;
+}
+.message.success{
+  color: green;
 }
 .intro-section {
   background-image: url(public/img/background.png);
@@ -102,8 +111,34 @@
  font-weight: 600;
   border: greenyellow solid 5px;
   text-align: left;
-
 }
+.square-group{
+  position: relative;
+}
+.square-one,.square-two,.square-three,.square-four{
+  position: absolute;
+  width: 1.5rem;
+  height:1.5rem;
+  background-color: #fff;
+  border: greenyellow solid 0.3rem;
+}
+.square-one{
+  top: -0.6rem;
+  left: -0.6rem;
+}
+.square-two{
+  top: -0.6rem;
+  right: -0.6rem;
+}
+.square-three{
+  bottom: -0.6rem;
+  left: -0.6rem;
+}
+.square-four{
+  bottom:-0.6rem;
+  right: -0.6rem;
+}
+
 .intro-section span{
   margin-top: 15px;
 }
@@ -125,10 +160,6 @@
 .company span img{
   height: 20px;
 } 
-
-.login-form .message{
-color: red;
-}
 
 /* 小屏幕 */
 @media screen and (max-width: 768px) {
