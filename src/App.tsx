@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-import { User } from './type';
+import { MessageType, User } from './type';
 function App() {
   const [user, setUser] = useState<User>({
     email: "",
     password: ""
   })
-  const [message, setMessage] = useState<String>("")
-  const [messageType, setMessageType] = useState<"error" | "success" | "">("")
+  const [message, setMessage] = useState<string>("")
+  const [messageType, setMessageType] = useState<MessageType>("")
+  const [isLogin, setIsLogin] = useState<boolean>(true)
+  const registeredUsers: User[] = JSON.parse(localStorage.getItem("users") || '[]')
+
   const validEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email)
@@ -16,7 +19,7 @@ function App() {
   const validPassword = (password: string) => {
     return password.length >= 6
   }
-  const registeredUsers: User[] = JSON.parse(localStorage.getItem("users") || '[]')
+
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault()
     if (!validEmail(user.email) && !validPassword(user.password)) {
@@ -44,6 +47,8 @@ function App() {
       email: "",
       password: ""
     })
+    setIsLogin(true)
+    console.log(isLogin)
   }
 
   const handleLogin = (e: React.FormEvent) => {
@@ -61,8 +66,13 @@ function App() {
         setMessageType("error")
       }
     }
+    setUser({
+      email: "",
+      password: ""
+    })
+    setIsLogin(true)
+    console.log(isLogin)
   }
-
 
   return (
     <>
@@ -73,18 +83,28 @@ function App() {
             <h2>Welcome back</h2>
             <h3>Welcome back! Please enter your details.</h3>
           </section>
-
-          <form className='login-form' onSubmit={handleLogin}>
+          {isLogin ? (<form className='login-form' onSubmit={handleLogin}>
             <label htmlFor='email'>Email</label>
             <input id='email' type="email" value={user.email} onChange={e => (setUser({ ...user, email: e.target.value }))} required />
             <label htmlFor='password' className='password'>Password</label>
             <input id='password' type="password" value={user.password} onChange={e => { setUser({ ...user, password: e.target.value }) }} required />
             <button className='signin' >Sign in</button>
             <button className='google-signin'><img src="public/img/google.png" alt="googleLogo" />Sign in with Google</button>
-            <p onClick={handleRegister}>Need an account? <a href="#">Create an account</a></p>
+            <p onClick={() => { setIsLogin(false) }}>Need an account?<a href="#">Create an account</a></p>
             {/* {message && <p className='message' style={{ color: messageType === "success" ? "green" : "red" }} >{message}</p>} */}
             {message && <p className={`message ${messageType}`}>{message}</p>}
-          </form>
+          </form>) : (<form className='login-form' onSubmit={handleRegister}>
+            <label htmlFor='email'>Email</label>
+            <input id='email' type="email" value={user.email} onChange={e => (setUser({ ...user, email: e.target.value }))} required />
+            <label htmlFor='password' className='password'>Password</label>
+            <input id='password' type="password" value={user.password} onChange={e => { setUser({ ...user, password: e.target.value }) }} required />
+            <button className='signin' >Sign in</button>
+            <button className='google-signin'><img src="public/img/google.png" alt="googleLogo" />Sign in with Google</button>
+            <p onClick={() => { setIsLogin(false) }}>Need an account?<a href="#">Create an account</a> </p>
+            {/* {message && <p className='message' style={{ color: messageType === "success" ? "green" : "red" }} >{message}</p>} */}
+            {message && <p className={`message ${messageType}`}>{message}</p>}
+          </form>)}
+
         </section>
 
         <section className='intro-section'>
