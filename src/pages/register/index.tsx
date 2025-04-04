@@ -18,6 +18,7 @@ const Register = () => {
         isPasswordValid,
         isEmailRegistered,
         registeredUsers,
+        setRegisteredUsers
     } = useAuth();
     const handleRegister = (e: FormEvent) => {
         e.preventDefault()
@@ -35,8 +36,11 @@ const Register = () => {
             default:
                 setMessage("Register successfully, Please sign in.")
                 setMessageType("success")
-                registeredUsers.push(user)
-                localStorage.setItem("users", JSON.stringify(registeredUsers))
+                const updatedUsers = [...registeredUsers, user]; // 创建新数组
+                setRegisteredUsers(updatedUsers);
+                localStorage.setItem("users", JSON.stringify(updatedUsers));
+                // registeredUsers.push(user)
+                // localStorage.setItem("users", JSON.stringify(registeredUsers))
                 break
         }
     }
