@@ -68,7 +68,8 @@ const useAuth = ()=>{
         isPasswordValid,
         isEmailRegistered,
         isPasswordCorrect,
-        registeredUsers
+        registeredUsers,
+        setRegisteredUsers
     };
 };
 _s(useAuth, "6lzL4ITOgjfrkxfaO38DapOD7Xk=");

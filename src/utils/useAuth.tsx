@@ -25,7 +25,7 @@ export const useAuth = () => {
     const isEmailRegistered = registeredUsers.some((existUser: { email: string; }) => existUser.email === user.email);
     const isPasswordCorrect = registeredUsers.some((existUser: { password: string; }) => existUser.password === user.password);
 
-    return { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordValid, isEmailRegistered, isPasswordCorrect, registeredUsers };
+    return { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordValid, isEmailRegistered, isPasswordCorrect, registeredUsers, setRegisteredUsers };
 };
 
 

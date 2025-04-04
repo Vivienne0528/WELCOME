@@ -61,7 +61,8 @@ const useAuth = ()=>{
         isPasswordValid,
         isEmailRegistered,
         isPasswordCorrect,
-        registeredUsers
+        registeredUsers,
+        setRegisteredUsers
     };
 };
 }}),

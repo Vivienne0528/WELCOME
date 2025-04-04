@@ -44,7 +44,15 @@ const useAuth = ()=>{
     });
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [messageType, setMessageType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("error");
-    const registeredUsers = JSON.parse(localStorage.getItem("users") || '[]');
+    const [registeredUsers, setRegisteredUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useAuth.useEffect": ()=>{
+            if ("TURBOPACK compile-time truthy", 1) {
+                setRegisteredUsers(JSON.parse(localStorage.getItem("users") || '[]'));
+            }
+        }
+    }["useAuth.useEffect"], []);
+    // const registeredUsers = JSON.parse(localStorage.getItem("users") || '[]');
     const isEmailValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["validateEmail"])(user.email);
     const isPasswordValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["validatePassword"])(user.password);
     const isEmailRegistered = registeredUsers.some((existUser)=>existUser.email === user.email);
@@ -60,10 +68,11 @@ const useAuth = ()=>{
         isPasswordValid,
         isEmailRegistered,
         isPasswordCorrect,
-        registeredUsers
+        registeredUsers,
+        setRegisteredUsers
     };
 };
-_s(useAuth, "pR2LNMoExBJMm8EiBsL6SBT/ulE=");
+_s(useAuth, "6lzL4ITOgjfrkxfaO38DapOD7Xk=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -88,7 +97,7 @@ var _s = __turbopack_context__.k.signature();
 const Register = ()=>{
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordValid, isEmailRegistered, registeredUsers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"])();
+    const { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordValid, isEmailRegistered, registeredUsers, setRegisteredUsers } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"])();
     const handleRegister = (e)=>{
         e.preventDefault();
         setMessageType("error");
@@ -105,8 +114,12 @@ const Register = ()=>{
             default:
                 setMessage("Register successfully, Please sign in.");
                 setMessageType("success");
-                registeredUsers.push(user);
-                localStorage.setItem("users", JSON.stringify(registeredUsers));
+                const updatedUsers = [
+                    ...registeredUsers,
+                    user
+                ]; // 创建新数组
+                setRegisteredUsers(updatedUsers);
+                localStorage.setItem("users", JSON.stringify(updatedUsers));
                 break;
         }
     };
@@ -119,7 +132,7 @@ const Register = ()=>{
                 children: "Email"
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 46,
+                lineNumber: 50,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -133,7 +146,7 @@ const Register = ()=>{
                     })
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 47,
+                lineNumber: 51,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -142,7 +155,7 @@ const Register = ()=>{
                 children: "Password"
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 48,
+                lineNumber: 52,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -156,7 +169,7 @@ const Register = ()=>{
                     })
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 49,
+                lineNumber: 53,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -164,7 +177,7 @@ const Register = ()=>{
                 children: "Register"
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 50,
+                lineNumber: 54,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -175,14 +188,14 @@ const Register = ()=>{
                         alt: "googleLogo"
                     }, void 0, false, {
                         fileName: "[project]/src/app/register/page.tsx",
-                        lineNumber: 51,
+                        lineNumber: 55,
                         columnNumber: 47
                     }, this),
                     "Register with Google"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 51,
+                lineNumber: 55,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -196,13 +209,13 @@ const Register = ()=>{
                         children: "Sign in"
                     }, void 0, false, {
                         fileName: "[project]/src/app/register/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 56,
                         columnNumber: 34
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 52,
+                lineNumber: 56,
                 columnNumber: 13
             }, this),
             message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -210,17 +223,17 @@ const Register = ()=>{
                 children: message
             }, void 0, false, {
                 fileName: "[project]/src/app/register/page.tsx",
-                lineNumber: 53,
+                lineNumber: 57,
                 columnNumber: 25
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/register/page.tsx",
-        lineNumber: 45,
+        lineNumber: 49,
         columnNumber: 9
     }, this);
 };
-_s(Register, "AL2lgmpnNsmgrETAGkVqR33KPgU=", false, function() {
+_s(Register, "ivbD/2BX5nAYDXpR9CKwzkRJvzM=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useAuth"]
