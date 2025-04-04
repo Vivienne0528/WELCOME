@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {
+      "offset": {
+        "line": 7,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/validators.tsx"
+        ],
+        "sourcesContent": [
+          "// src/utils/validators.tsx\n\nexport const validateEmail = (email: string) => {\n    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n    return emailRegex.test(email);\n};\n\nexport const validatePassword = (password: string) => {\n    return password.length >= 6;\n};"
+        ],
+        "names": [],
+        "mappings": "AAAA,2BAA2B;;;;;AAEpB,MAAM,gBAAgB,CAAC;IAC1B,MAAM,aAAa;IACnB,OAAO,WAAW,IAAI,CAAC;AAC3B;AAEO,MAAM,mBAAmB,CAAC;IAC7B,OAAO,SAAS,MAAM,IAAI;AAC9B",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 28,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/useAuth.tsx"
+        ],
+        "sourcesContent": [
+          "// src/utils/useAuth.tsx\n\"use client\"\nimport { useState } from \"react\";\nimport { validateEmail, validatePassword } from \"./validators\";\n\nexport const auth = () => {\n    const [user, setUser] = useState({\n        email: '',\n        password: ''\n    });\n    const [message, setMessage] = useState('');\n    const [messageType, setMessageType] = useState<\"success\" | \"error\">(\"error\")\n\n    const registeredUsers = JSON.parse(localStorage.getItem(\"users\") || '[]');\n\n    const isEmailValid = validateEmail(user.email);\n    const isPasswordValid = validatePassword(user.password);\n    const isEmailRegistered = registeredUsers.some((existUser: { email: string; }) => existUser.email === user.email);\n    const isPasswordCorrect = registeredUsers.some((existUser: { password: string; }) => existUser.password === user.password);\n\n    return { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordValid, isEmailRegistered, isPasswordCorrect, registeredUsers };\n};\n\n\n"
+        ],
+        "names": [],
+        "mappings": "AAAA,qBAAqB;;;;AAErB;AACA;;AAFA;;;AAIO,MAAM,OAAO;;IAChB,MAAM,CAAC,MAAM,QAAQ,GAAG,CAAA,GAAA,6JAAA,CAAA,WAAQ,AAAD,EAAE;QAC7B,OAAO;QACP,UAAU;IACd;IACA,MAAM,CAAC,SAAS,WAAW,GAAG,CAAA,GAAA,6JAAA,CAAA,WAAQ,AAAD,EAAE;IACvC,MAAM,CAAC,aAAa,eAAe,GAAG,CAAA,GAAA,6JAAA,CAAA,WAAQ,AAAD,EAAuB;IAEpE,MAAM,kBAAkB,KAAK,KAAK,CAAC,aAAa,OAAO,CAAC,YAAY;IAEpE,MAAM,eAAe,CAAA,GAAA,8HAAA,CAAA,gBAAa,AAAD,EAAE,KAAK,KAAK;IAC7C,MAAM,kBAAkB,CAAA,GAAA,8HAAA,CAAA,mBAAgB,AAAD,EAAE,KAAK,QAAQ;IACtD,MAAM,oBAAoB,gBAAgB,IAAI,CAAC,CAAC,YAAkC,UAAU,KAAK,KAAK,KAAK,KAAK;IAChH,MAAM,oBAAoB,gBAAgB,IAAI,CAAC,CAAC,YAAqC,UAAU,QAAQ,KAAK,KAAK,QAAQ;IAEzH,OAAO;QAAE;QAAM;QAAS;QAAS;QAAY;QAAa;QAAgB;QAAc;QAAiB;QAAmB;QAAmB;IAAgB;AACnK;GAhBa",
+        "debugId": null
+      }
+    }
+  ]
+}

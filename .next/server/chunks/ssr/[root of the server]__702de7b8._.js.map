@@ -1,0 +1,104 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {
+      "offset": {
+        "line": 6,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [],
+        "names": [],
+        "mappings": "",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 18,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/useAuth.tsx/proxy.mjs"
+        ],
+        "sourcesContent": [
+          "import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport const auth = registerClientReference(\n    function() { throw new Error(\"Attempted to call auth() from the server but auth is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/src/utils/useAuth.tsx <module evaluation>\",\n    \"auth\",\n);\n"
+        ],
+        "names": [],
+        "mappings": ";;;AAAA;;AACO,MAAM,OAAO,CAAA,GAAA,qPAAA,CAAA,0BAAuB,AAAD,EACtC;IAAa,MAAM,IAAI,MAAM;AAAwN,GACrP,oDACA",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 32,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/useAuth.tsx/proxy.mjs"
+        ],
+        "sourcesContent": [
+          "import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport const auth = registerClientReference(\n    function() { throw new Error(\"Attempted to call auth() from the server but auth is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/src/utils/useAuth.tsx\",\n    \"auth\",\n);\n"
+        ],
+        "names": [],
+        "mappings": ";;;AAAA;;AACO,MAAM,OAAO,CAAA,GAAA,qPAAA,CAAA,0BAAuB,AAAD,EACtC;IAAa,MAAM,IAAI,MAAM;AAAwN,GACrP,gCACA",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 46,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [],
+        "names": [],
+        "mappings": "",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 80,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/app/login/page.tsx"
+        ],
+        "sourcesContent": [
+          "// src/components/Login.tsx\nimport { auth } from \"@/utils/auth\";\nimport router from \"next/router\";\nimport { FormEvent } from \"react\";\n\n\n\n\nconst Login = () => {\n    const {\n        user,\n        setUser,\n        message,\n        setMessage,\n        messageType,\n        setMessageType,\n        isEmailValid,\n        isPasswordCorrect,\n        isEmailRegistered,\n\n    } = auth();\n    const handleLogin = (e: FormEvent) => {\n        setMessageType(\"error\")\n        e.preventDefault()\n        //登陆,1.邮箱不存在 2.邮箱存在,密码错误 3.邮箱密码都正确\n        switch (true) {\n            case !isEmailValid:\n                setMessage(\"Please enter a valid email address (e.g., user@example.com).\")\n                break\n            case !isEmailRegistered:\n                setMessage(\"Email has  not been registered, Please register. \")\n                break\n            case isEmailRegistered && !isPasswordCorrect:\n                setMessage(\"Your password is not correct, please try again.\")\n                break\n            default:\n                setMessage(\"Login successfully, Please sign in.\")\n                setMessageType(\"success\")\n                break\n        }\n    }\n    return (\n        <main>\n            <section className='login-section'>\n                <section className='welcome'>\n                    <img src=\"/img/logo.png\" alt=\"logo\" />\n                    <h2>Welcome back</h2>\n                    <h3>Welcome back! Please enter your details.</h3>\n                </section>\n                <form className='login-form' onSubmit={handleLogin}>\n                    <label htmlFor='email'>Email</label>\n                    <input id='email' type=\"email\" required value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })} />\n                    <label htmlFor='password' className='password'>Password</label>\n                    <input id='password' type=\"password\" required value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />\n                    <button className='signin' >Sign in</button>\n                    <button className='google-signin'><img src=\"/img/google.png\" alt=\"googleLogo\" />Sign in with Google</button>\n                    <p >Have an account? <a href=\"#\" onClick={() => (router.push('/register'))}>Register</a></p>\n                    {message && <p className={`message ${messageType}`}>{message}</p>}\n                </form>\n            </section>\n\n            <section className='intro-section'>\n                <section className='square-group'>\n                    <p> \"Untitled truly has solved all our design and content problems, freeing up our time to work on more important things. We can't imagine working without it.\"</p>\n                    <div className='square-one'></div>\n                    <div className='square-two'></div>\n                    <div className='square-three'></div>\n                    <div className='square-four'></div>\n                </section>\n\n                <div className='author'> <span>Mischca Sullivan</span> ★★★★★</div>\n                <div className='company'><span><img src=\"public/img/smallLogo.png\" alt=\"smallLogo\" /> Bolt Agency</span> ← →</div>\n            </section>\n        </main>\n    )\n}\n\nexport default Login"
+        ],
+        "names": [],
+        "mappings": "AAAA,2BAA2B;;;;;AAC3B;AACA;;;;AAMA,MAAM,QAAQ;IACV,MAAM,EACF,IAAI,EACJ,OAAO,EACP,OAAO,EACP,UAAU,EACV,WAAW,EACX,cAAc,EACd,YAAY,EACZ,iBAAiB,EACjB,iBAAiB,EAEpB,GAAG,CAAA,GAAA,qHAAA,CAAA,OAAI,AAAD;IACP,MAAM,cAAc,CAAC;QACjB,eAAe;QACf,EAAE,cAAc;QAChB,kCAAkC;QAClC,OAAQ;YACJ,KAAK,CAAC;gBACF,WAAW;gBACX;YACJ,KAAK,CAAC;gBACF,WAAW;gBACX;YACJ,KAAK,qBAAqB,CAAC;gBACvB,WAAW;gBACX;YACJ;gBACI,WAAW;gBACX,eAAe;gBACf;QACR;IACJ;IACA,qBACI,8OAAC;;0BACG,8OAAC;gBAAQ,WAAU;;kCACf,8OAAC;wBAAQ,WAAU;;0CACf,8OAAC;gCAAI,KAAI;gCAAgB,KAAI;;;;;;0CAC7B,8OAAC;0CAAG;;;;;;0CACJ,8OAAC;0CAAG;;;;;;;;;;;;kCAER,8OAAC;wBAAK,WAAU;wBAAa,UAAU;;0CACnC,8OAAC;gCAAM,SAAQ;0CAAQ;;;;;;0CACvB,8OAAC;gCAAM,IAAG;gCAAQ,MAAK;gCAAQ,QAAQ;gCAAC,OAAO,KAAK,KAAK;gCAAE,UAAU,CAAC,IAAM,QAAQ;wCAAE,GAAG,IAAI;wCAAE,OAAO,EAAE,MAAM,CAAC,KAAK;oCAAC;;;;;;0CACrH,8OAAC;gCAAM,SAAQ;gCAAW,WAAU;0CAAW;;;;;;0CAC/C,8OAAC;gCAAM,IAAG;gCAAW,MAAK;gCAAW,QAAQ;gCAAC,OAAO,KAAK,QAAQ;gCAAE,UAAU,CAAC,IAAM,QAAQ;wCAAE,GAAG,IAAI;wCAAE,UAAU,EAAE,MAAM,CAAC,KAAK;oCAAC;;;;;;0CACjI,8OAAC;gCAAO,WAAU;0CAAU;;;;;;0CAC5B,8OAAC;gCAAO,WAAU;;kDAAgB,8OAAC;wCAAI,KAAI;wCAAkB,KAAI;;;;;;oCAAe;;;;;;;0CAChF,8OAAC;;oCAAG;kDAAiB,8OAAC;wCAAE,MAAK;wCAAI,SAAS,IAAO,8HAAA,CAAA,UAAM,CAAC,IAAI,CAAC;kDAAe;;;;;;;;;;;;4BAC3E,yBAAW,8OAAC;gCAAE,WAAW,CAAC,QAAQ,EAAE,aAAa;0CAAG;;;;;;;;;;;;;;;;;;0BAI7D,8OAAC;gBAAQ,WAAU;;kCACf,8OAAC;wBAAQ,WAAU;;0CACf,8OAAC;0CAAE;;;;;;0CACH,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;;;;;;;kCAGnB,8OAAC;wBAAI,WAAU;;4BAAS;0CAAC,8OAAC;0CAAK;;;;;;4BAAuB;;;;;;;kCACtD,8OAAC;wBAAI,WAAU;;0CAAU,8OAAC;;kDAAK,8OAAC;wCAAI,KAAI;wCAA2B,KAAI;;;;;;oCAAc;;;;;;;4BAAmB;;;;;;;;;;;;;;;;;;;AAIxH;uCAEe",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 373,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/app/page.tsx"
+        ],
+        "sourcesContent": [
+          "// src/app/page.tsx\nimport './App.css'\nimport Login from './login/page';\nexport default function Home() {\n  return (\n    <main>\n      <section className='login-section'>\n        <section className='welcome'>\n          <img src=\"/img/logo.png\" alt=\"logo\" />\n          <h2>Welcome back</h2>\n          <h3>Welcome back! Please enter your details.</h3>\n        </section>\n        <Login />\n      </section>\n\n      <section className='intro-section'>\n        <section className='square-group'>\n          <p> \"Untitled truly has solved all our design and content problems, freeing up our time to work on more important things. We can't imagine working without it.\"</p>\n          <div className='square-one'></div>\n          <div className='square-two'></div>\n          <div className='square-three'></div>\n          <div className='square-four'></div>\n        </section>\n\n        <div className='author'> <span>Mischca Sullivan</span> ★★★★★</div>\n        <div className='company'><span><img src=\"/img/smallLogo.png\" alt=\"smallLogo\" /> Bolt Agency</span> ← →</div>\n      </section>\n    </main>\n  );\n}\n"
+        ],
+        "names": [],
+        "mappings": "AAAA,mBAAmB;;;;;AAEnB;;;;AACe,SAAS;IACtB,qBACE,8OAAC;;0BACC,8OAAC;gBAAQ,WAAU;;kCACjB,8OAAC;wBAAQ,WAAU;;0CACjB,8OAAC;gCAAI,KAAI;gCAAgB,KAAI;;;;;;0CAC7B,8OAAC;0CAAG;;;;;;0CACJ,8OAAC;0CAAG;;;;;;;;;;;;kCAEN,8OAAC,4HAAA,CAAA,UAAK;;;;;;;;;;;0BAGR,8OAAC;gBAAQ,WAAU;;kCACjB,8OAAC;wBAAQ,WAAU;;0CACjB,8OAAC;0CAAE;;;;;;0CACH,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;0CACf,8OAAC;gCAAI,WAAU;;;;;;;;;;;;kCAGjB,8OAAC;wBAAI,WAAU;;4BAAS;0CAAC,8OAAC;0CAAK;;;;;;4BAAuB;;;;;;;kCACtD,8OAAC;wBAAI,WAAU;;0CAAU,8OAAC;;kDAAK,8OAAC;wCAAI,KAAI;wCAAqB,KAAI;;;;;;oCAAc;;;;;;;4BAAmB;;;;;;;;;;;;;;;;;;;AAI1G",
+        "debugId": null
+      }
+    }
+  ]
+}

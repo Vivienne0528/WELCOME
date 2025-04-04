@@ -1,0 +1,202 @@
+/* [project]/src/app/App.css [app-client] (css) */
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-section {
+  width: 100%;
+  min-width: 25rem;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.welcome {
+  margin-bottom: 30px;
+}
+
+.welcome h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.welcome h3 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.welcome img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label, input {
+  font-size: .8rem;
+  color: #666;
+}
+
+.login-form input {
+  border: none;
+  border-bottom: 1px solid #666;
+  height: 1.5rem;
+}
+
+.password {
+  margin-top: 30px;
+}
+
+.login-form button {
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.signin {
+  background-color: #000;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.google-signin {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-signin img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.login-form p {
+  font-size: .8rem;
+  text-align: center;
+  color: #000;
+  margin-top: 30px;
+}
+
+.login-form a {
+  color: #000;
+  font-weight: 600;
+}
+
+.message {
+  font-size: .8rem;
+  margin-top: 10px;
+}
+
+.message.error {
+  color: red;
+}
+
+.message.success {
+  color: green;
+}
+
+.intro-section {
+  background-image: url("/img/background.png");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-width: 28rem;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 300px;
+}
+
+.intro-section p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: 5px solid #adff2f;
+  text-align: left;
+}
+
+.square-group {
+  position: relative;
+}
+
+.square-one, .square-two, .square-three, .square-four {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border: .3rem solid #adff2f;
+}
+
+.square-one {
+  top: -.6rem;
+  left: -.6rem;
+}
+
+.square-two {
+  top: -.6rem;
+  right: -.6rem;
+}
+
+.square-three {
+  bottom: -.6rem;
+  left: -.6rem;
+}
+
+.square-four {
+  bottom: -.6rem;
+  right: -.6rem;
+}
+
+.intro-section span {
+  margin-top: 15px;
+}
+
+.author {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company span {
+  display: flex;
+  align-items: center;
+}
+
+.company span img {
+  height: 20px;
+}
+
+@media screen and (width <= 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-section {
+    padding: 8px;
+  }
+}
+
+/*# sourceMappingURL=src_app_App_b52d8e88.css.map*/

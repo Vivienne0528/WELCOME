@@ -1,0 +1,86 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {
+      "offset": {
+        "line": 6,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [],
+        "names": [],
+        "mappings": "",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 18,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/useAuth.tsx/proxy.mjs"
+        ],
+        "sourcesContent": [
+          "import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport const auth = registerClientReference(\n    function() { throw new Error(\"Attempted to call auth() from the server but auth is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/src/utils/useAuth.tsx <module evaluation>\",\n    \"auth\",\n);\n"
+        ],
+        "names": [],
+        "mappings": ";;;AAAA;;AACO,MAAM,OAAO,CAAA,GAAA,qPAAA,CAAA,0BAAuB,AAAD,EACtC;IAAa,MAAM,IAAI,MAAM;AAAwN,GACrP,oDACA",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 32,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/utils/useAuth.tsx/proxy.mjs"
+        ],
+        "sourcesContent": [
+          "import { registerClientReference } from \"react-server-dom-turbopack/server.edge\";\nexport const auth = registerClientReference(\n    function() { throw new Error(\"Attempted to call auth() from the server but auth is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.\"); },\n    \"[project]/src/utils/useAuth.tsx\",\n    \"auth\",\n);\n"
+        ],
+        "names": [],
+        "mappings": ";;;AAAA;;AACO,MAAM,OAAO,CAAA,GAAA,qPAAA,CAAA,0BAAuB,AAAD,EACtC;IAAa,MAAM,IAAI,MAAM;AAAwN,GACrP,gCACA",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 46,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [],
+        "names": [],
+        "mappings": "",
+        "debugId": null
+      }
+    },
+    {
+      "offset": {
+        "line": 80,
+        "column": 0
+      },
+      "map": {
+        "version": 3,
+        "sources": [
+          "file:///Users/yuwei/Desktop/welcome-next/src/app/login/page.tsx"
+        ],
+        "sourcesContent": [
+          "// src/components/Login.tsx\nimport { auth } from \"@/utils/auth\";\nimport router from \"next/router\";\nimport { FormEvent, useEffect, useState } from \"react\";\n\nconst Login = () => {\n    const [authData, setAuthData] = useState(null);\n    useEffect(() => {\n        const clientAuthData = auth();\n        setAuthData(clientAuthData);\n    }, [])\n    if (!authData) {\n        return <div>Loading...</div>; // 可以自定义加载中的提示\n    }\n    const {\n        user,\n        setUser,\n        message,\n        setMessage,\n        messageType,\n        setMessageType,\n        isEmailValid,\n        isPasswordCorrect,\n        isEmailRegistered,\n    } = authData;\n    const handleLogin = (e: FormEvent) => {\n        setMessageType(\"error\")\n        e.preventDefault()\n        //登陆,1.邮箱不存在 2.邮箱存在,密码错误 3.邮箱密码都正确\n        switch (true) {\n            case !isEmailValid:\n                setMessage(\"Please enter a valid email address (e.g., user@example.com).\")\n                break\n            case !isEmailRegistered:\n                setMessage(\"Email has  not been registered, Please register. \")\n                break\n            case isEmailRegistered && !isPasswordCorrect:\n                setMessage(\"Your password is not correct, please try again.\")\n                break\n            default:\n                setMessage(\"Login successfully, Please sign in.\")\n                setMessageType(\"success\")\n                break\n        }\n    }\n    return (\n        <form className='login-form' onSubmit={handleLogin}>\n            <label htmlFor='email'>Email</label>\n            <input id='email' type=\"email\" required value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })} />\n            <label htmlFor='password' className='password'>Password</label>\n            <input id='password' type=\"password\" required value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />\n            <button className='signin' >Sign in</button>\n            <button className='google-signin'><img src=\"/img/google.png\" alt=\"googleLogo\" />Sign in with Google</button>\n            <p >Have an account? <a href=\"#\" onClick={() => (router.push('/register'))}>Register</a></p>\n            {message && <p className={`message ${messageType}`}>{message}</p>}\n        </form>\n    )\n}\n\nexport default Login"
+        ],
+        "names": [],
+        "mappings": "AAAA,2BAA2B;;;;;AAC3B;AACA;AACA;;;;;AAEA,MAAM,QAAQ;IACV,MAAM,CAAC,UAAU,YAAY,GAAG,CAAA,GAAA,qMAAA,CAAA,WAAQ,AAAD,EAAE;IACzC,CAAA,GAAA,qMAAA,CAAA,YAAS,AAAD,EAAE;QACN,MAAM,iBAAiB,CAAA,GAAA,qHAAA,CAAA,OAAI,AAAD;QAC1B,YAAY;IAChB,GAAG,EAAE;IACL,IAAI,CAAC,UAAU;QACX,qBAAO,8OAAC;sBAAI;;;;;kBAAkB,cAAc;IAChD;IACA,MAAM,EACF,IAAI,EACJ,OAAO,EACP,OAAO,EACP,UAAU,EACV,WAAW,EACX,cAAc,EACd,YAAY,EACZ,iBAAiB,EACjB,iBAAiB,EACpB,GAAG;IACJ,MAAM,cAAc,CAAC;QACjB,eAAe;QACf,EAAE,cAAc;QAChB,kCAAkC;QAClC,OAAQ;YACJ,KAAK,CAAC;gBACF,WAAW;gBACX;YACJ,KAAK,CAAC;gBACF,WAAW;gBACX;YACJ,KAAK,qBAAqB,CAAC;gBACvB,WAAW;gBACX;YACJ;gBACI,WAAW;gBACX,eAAe;gBACf;QACR;IACJ;IACA,qBACI,8OAAC;QAAK,WAAU;QAAa,UAAU;;0BACnC,8OAAC;gBAAM,SAAQ;0BAAQ;;;;;;0BACvB,8OAAC;gBAAM,IAAG;gBAAQ,MAAK;gBAAQ,QAAQ;gBAAC,OAAO,KAAK,KAAK;gBAAE,UAAU,CAAC,IAAM,QAAQ;wBAAE,GAAG,IAAI;wBAAE,OAAO,EAAE,MAAM,CAAC,KAAK;oBAAC;;;;;;0BACrH,8OAAC;gBAAM,SAAQ;gBAAW,WAAU;0BAAW;;;;;;0BAC/C,8OAAC;gBAAM,IAAG;gBAAW,MAAK;gBAAW,QAAQ;gBAAC,OAAO,KAAK,QAAQ;gBAAE,UAAU,CAAC,IAAM,QAAQ;wBAAE,GAAG,IAAI;wBAAE,UAAU,EAAE,MAAM,CAAC,KAAK;oBAAC;;;;;;0BACjI,8OAAC;gBAAO,WAAU;0BAAU;;;;;;0BAC5B,8OAAC;gBAAO,WAAU;;kCAAgB,8OAAC;wBAAI,KAAI;wBAAkB,KAAI;;;;;;oBAAe;;;;;;;0BAChF,8OAAC;;oBAAG;kCAAiB,8OAAC;wBAAE,MAAK;wBAAI,SAAS,IAAO,8HAAA,CAAA,UAAM,CAAC,IAAI,CAAC;kCAAe;;;;;;;;;;;;YAC3E,yBAAW,8OAAC;gBAAE,WAAW,CAAC,QAAQ,EAAE,aAAa;0BAAG;;;;;;;;;;;;AAGjE;uCAEe",
+        "debugId": null
+      }
+    }
+  ]
+}
