@@ -44,7 +44,15 @@ const useAuth = ()=>{
     });
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [messageType, setMessageType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("error");
-    const registeredUsers = JSON.parse(localStorage.getItem("users") || '[]');
+    const [registeredUsers, setRegisteredUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useAuth.useEffect": ()=>{
+            if ("TURBOPACK compile-time truthy", 1) {
+                setRegisteredUsers(JSON.parse(localStorage.getItem("users") || '[]'));
+            }
+        }
+    }["useAuth.useEffect"], []);
+    // const registeredUsers = JSON.parse(localStorage.getItem("users") || '[]');
     const isEmailValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["validateEmail"])(user.email);
     const isPasswordValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["validatePassword"])(user.password);
     const isEmailRegistered = registeredUsers.some((existUser)=>existUser.email === user.email);
@@ -63,7 +71,7 @@ const useAuth = ()=>{
         registeredUsers
     };
 };
-_s(useAuth, "pR2LNMoExBJMm8EiBsL6SBT/ulE=");
+_s(useAuth, "6lzL4ITOgjfrkxfaO38DapOD7Xk=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }

@@ -7,8 +7,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >    <main>
+      <body>
+        <main>
           <section className='login-section'>
             <section className='welcome'>
               <img src="/img/logo.png" alt="logo" />
