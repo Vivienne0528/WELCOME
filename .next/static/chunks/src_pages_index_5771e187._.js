@@ -7,8 +7,9 @@
   "chunks": [
     "static/chunks/node_modules_next_73d2c5be._.js",
     "static/chunks/node_modules_react-dom_82bb97c6._.js",
-    "static/chunks/node_modules_1b7400a8._.js",
-    "static/chunks/[root of the server]__63c7d640._.js"
+    "static/chunks/node_modules_bde7c8c0._.js",
+    "static/chunks/[root of the server]__541cefee._.js",
+    "static/chunks/src_styles_forms_3dc3520f.css"
   ],
   "source": "entry"
 });

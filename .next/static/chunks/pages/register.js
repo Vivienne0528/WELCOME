@@ -1,8 +1,11 @@
 __turbopack_load_page_chunks__("/register", [
   "static/chunks/node_modules_next_73d2c5be._.js",
   "static/chunks/node_modules_react-dom_82bb97c6._.js",
-  "static/chunks/node_modules_1b7400a8._.js",
-  "static/chunks/[root of the server]__993292ee._.js",
+  "static/chunks/node_modules_date-fns_c3ccbb40._.js",
+  "static/chunks/node_modules_@floating-ui_react_dist_dec9c2d5._.js",
+  "static/chunks/node_modules_react-datepicker_dist_index_es_e4a78c14.js",
+  "static/chunks/node_modules_c2f3d5b2._.js",
+  "static/chunks/[root of the server]__4025c7b9._.js",
   "static/chunks/src_pages_register_index_tsx_5771e187._.js",
-  "static/chunks/src_pages_register_index_tsx_7fee682d._.js"
+  "static/chunks/src_pages_register_index_tsx_c7cec1cc._.js"
 ])

@@ -506,6 +506,10 @@ const useAuth = ()=>{
     });
     const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])('');
     const [messageType, setMessageType] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("error");
+    const existUser = {
+        "email": "vivienne0528.gu@gmail.com",
+        "password": "111111"
+    };
     const [registeredUsers, setRegisteredUsers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])([]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useAuth.useEffect": ()=>{
@@ -515,6 +519,7 @@ const useAuth = ()=>{
         }
     }["useAuth.useEffect"], []);
     // const registeredUsers = JSON.parse(localStorage.getItem("users") || '[]');
+    const [isSubmitted, setIsSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const isEmailValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["validateEmail"])(user.email);
     const isPasswordValid = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$validators$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["validatePassword"])(user.password);
     const isEmailRegistered = registeredUsers.some((existUser)=>existUser.email === user.email);
@@ -531,10 +536,13 @@ const useAuth = ()=>{
         isEmailRegistered,
         isPasswordCorrect,
         registeredUsers,
-        setRegisteredUsers
+        setRegisteredUsers,
+        isSubmitted,
+        setIsSubmitted,
+        existUser
     };
 };
-_s(useAuth, "6lzL4ITOgjfrkxfaO38DapOD7Xk=");
+_s(useAuth, "zseIxv7O2ip0qXk/1SoZv3PjeQ0=");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -544,89 +552,110 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
-// src/components/Login.tsx
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/utils/useAuth.tsx [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-hook-form/dist/index.esm.mjs [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
-"use client";
+;
 ;
 ;
 const Login = ()=>{
     _s();
+    const { register, handleSubmit, formState: { errors }, control } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"])();
+    const { isSubmitted, setIsSubmitted, existUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const { user, setUser, message, setMessage, messageType, setMessageType, isEmailValid, isPasswordCorrect, isEmailRegistered } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"])();
-    const handleLogin = (e)=>{
-        setMessageType("error");
-        e.preventDefault();
-        //登陆,1.邮箱不存在 2.邮箱存在,密码错误 3.邮箱密码都正确
+    const onSubmit = (data)=>{
         switch(true){
-            case !isEmailValid:
-                setMessage("Please enter a valid email address (e.g., user@example.com).");
+            case !(data.email === existUser.email):
+                alert("Email has  not been registered, Please register. ");
                 break;
-            case !isEmailRegistered:
-                setMessage("Email has  not been registered, Please register. ");
-                break;
-            case isEmailRegistered && !isPasswordCorrect:
-                setMessage("Your password is not correct, please try again.");
+            case !(data.password === existUser.password):
+                alert("Your password is not correct, please try again.");
                 break;
             default:
-                setMessage("Login successfully!");
-                setMessageType("success");
+                setIsSubmitted(true);
                 break;
         }
+        alert(JSON.stringify(data));
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+        onSubmit: handleSubmit(onSubmit),
         className: "login-form",
-        onSubmit: handleLogin,
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                htmlFor: "email",
-                children: "Email"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                        htmlFor: "email",
+                        children: "e-mail: "
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/login/index.tsx",
+                        lineNumber: 34,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        id: "email",
+                        type: "email",
+                        ...register("email", {
+                            required: true
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/login/index.tsx",
+                        lineNumber: 35,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 45,
+                lineNumber: 33,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                id: "email",
-                type: "email",
-                required: true,
-                value: user.email,
-                onChange: (e)=>setUser({
-                        ...user,
-                        email: e.target.value
-                    })
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "message error",
+                children: errors.email?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 46,
+                lineNumber: 37,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                htmlFor: "password",
-                className: "password",
-                children: "Password"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                        htmlFor: "password",
+                        children: "Password: "
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/login/index.tsx",
+                        lineNumber: 40,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                        id: "password",
+                        type: "password",
+                        minLength: 6,
+                        ...register("password", {
+                            required: "Password is required."
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/login/index.tsx",
+                        lineNumber: 41,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 47,
+                lineNumber: 39,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                id: "password",
-                type: "password",
-                required: true,
-                value: user.password,
-                onChange: (e)=>setUser({
-                        ...user,
-                        password: e.target.value
-                    })
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "message error",
+                children: errors.password?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 48,
+                lineNumber: 43,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -634,7 +663,7 @@ const Login = ()=>{
                 children: "Sign in"
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 49,
+                lineNumber: 44,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -645,14 +674,14 @@ const Login = ()=>{
                         alt: "googleLogo"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
-                        lineNumber: 50,
+                        lineNumber: 45,
                         columnNumber: 47
                     }, this),
                     "Sign in with Google"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 50,
+                lineNumber: 45,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -666,34 +695,35 @@ const Login = ()=>{
                         children: "Register"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
-                        lineNumber: 51,
+                        lineNumber: 46,
                         columnNumber: 34
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 51,
+                lineNumber: 46,
                 columnNumber: 13
             }, this),
-            message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: `message ${messageType}`,
-                children: message
+            isSubmitted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "message success",
+                children: "Login successfully."
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
-                lineNumber: 52,
-                columnNumber: 25
+                lineNumber: 47,
+                columnNumber: 29
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/login/index.tsx",
-        lineNumber: 44,
+        lineNumber: 31,
         columnNumber: 9
     }, this);
 };
-_s(Login, "ggUbInC6Dbzx3SwFjEmCBDpb8EM=", false, function() {
+_s(Login, "sa4Q9huGfEYDuZko5zDxphy/sbY=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
 _c = Login;
