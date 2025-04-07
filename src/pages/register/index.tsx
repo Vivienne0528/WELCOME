@@ -1,5 +1,7 @@
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import ReactDatePicker from "react-datepicker";
+// src/pages/register/index.tsx
+import { SubmitHandler, useForm } from "react-hook-form";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css"
 import { IFormInput } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/utils/useAuth";
@@ -52,31 +54,20 @@ const Register = () => {
             <span className='message error'>{errors.email?.message}</span>
             <div>
                 <label htmlFor='password'>Password: </label>
+                {/* 至少一个大写,至少一个符号一个数字,至少8位 */}
                 <input id='password' type='password' minLength={6} {...register("password", { required: "Password is required." })} />
             </div>
             <span className='message error'>{errors.password?.message}</span>
             <div>
                 <label htmlFor='dateOfBirth'>Date of Birth: </label>
                 {/* <input id='dateOfBirth' {...register("dateOfBirth", { required: 'Date of birth is required.' })} /> */}
-                <Controller
-                    control={control}
-                    name="ReactDatepicker"
-                    render={({ field: { value, ...fieldProps } }) => {
-                        return (
-                            <ReactDatePicker
-                                {...fieldProps}
-                                className="input"
-                                placeholderText="Select date"
-                                selected={value}
-                            />
-                        );
-                    }}
-                />
+                <div className="datePicker" ><DatePicker /></div>
+
             </div>
             <span className='message error'>{errors.dateOfBirth?.message}</span>
             <div>
                 <label htmlFor='gender'>Gender: </label>
-                <select id='gender '{...register("gender", { required: "Gender is required." })}>
+                <select className='gender' id='gender '{...register("gender", { required: "Gender is required." })}>
                     <option value="female">female</option>
                     <option value="male">male</option>
                     <option value="other">other</option>
@@ -101,6 +92,7 @@ const Register = () => {
                 (<p className="message error">Email had been registered, Please sign in.</p>
                 )
             } */}
+
 
 
         </form>

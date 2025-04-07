@@ -1,3 +1,4 @@
+//src/types/types.ts
 enum GenderEnum {
   female = "female",
   male = "male",

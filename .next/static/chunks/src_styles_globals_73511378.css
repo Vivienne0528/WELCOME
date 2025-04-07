@@ -46,9 +46,8 @@ main {
   flex-direction: column;
 }
 
-.login-form div {
-  display: flex;
-  justify-content: space-between;
+.login-form input, .datePicker, .gender {
+  float: right;
 }
 
 .login-form label, input {

@@ -11,7 +11,8 @@
     "static/chunks/node_modules_@floating-ui_react_dist_dec9c2d5._.js",
     "static/chunks/node_modules_react-datepicker_dist_index_es_e4a78c14.js",
     "static/chunks/node_modules_c2f3d5b2._.js",
-    "static/chunks/[root of the server]__4025c7b9._.js"
+    "static/chunks/[root of the server]__4025c7b9._.js",
+    "static/chunks/node_modules_react-datepicker_dist_react-datepicker_bad1fc66.css"
   ],
   "source": "entry"
 });

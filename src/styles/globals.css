@@ -42,21 +42,24 @@ main {
   display: flex;
   flex-direction: column;
 }
-.login-form div {
-  display: flex;
-  justify-content: space-between;
+.login-form input,
+.datePicker,
+.gender {
+  float: right;
 }
 .login-form label,
 input {
   font-size: 0.8rem;
   color: #666;
 }
+
 .login-form input {
   width: 310px;
   border: none;
   border-bottom: 1px solid #666;
   height: 1.5rem;
 }
+
 .password {
   margin-top: 30px;
 }
