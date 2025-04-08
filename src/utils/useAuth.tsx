@@ -13,5 +13,3 @@ export const useAuth = () => {
 
     return { user, setUser, isSubmitted, setIsSubmitted, existUser };
 };
-
-

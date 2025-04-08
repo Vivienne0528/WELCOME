@@ -513,6 +513,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hoo
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$datepicker$2f$dist$2f$index$2e$es$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-datepicker/dist/index.es.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/utils/useAuth.tsx [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/yup/index.esm.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hookform$2f$resolvers$2f$yup$2f$dist$2f$yup$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@hookform/resolvers/yup/dist/yup.mjs [client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 ;
@@ -520,11 +522,27 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
+;
 const Register = ()=>{
     _s();
-    const { register, handleSubmit, formState: { errors }, control } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"])();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const { isSubmitted, setIsSubmitted, existUser } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"])();
+    const registerSchema = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["object"])().shape({
+        email: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().email().required(),
+        password: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required("Password is required").matches(/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/, "Password must be at least 8 characters, include 1 uppercase letter, 1 number, and 1 special character"),
+        firstName: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required(),
+        lastName: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required(),
+        nickName: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])(),
+        dateOfBirth: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["date"])().required(),
+        gender: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required(),
+        mobile: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required(),
+        address: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$yup$2f$index$2e$esm$2e$js__$5b$client$5d$__$28$ecmascript$29$__["string"])().required()
+    }).required();
+    {}
+    const { register, handleSubmit, formState: { errors }, control } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"])({
+        resolver: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$hookform$2f$resolvers$2f$yup$2f$dist$2f$yup$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["yupResolver"])(registerSchema)
+    });
     const onSubmit = (data)=>{
         if (existUser.email == data.email) {
             alert("Email had been registered, Please sign in.");
@@ -544,7 +562,7 @@ const Register = ()=>{
                         children: "First Name: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 26,
+                        lineNumber: 46,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -554,13 +572,13 @@ const Register = ()=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 27,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 25,
+                lineNumber: 45,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -568,7 +586,7 @@ const Register = ()=>{
                 children: errors.firstName?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 30,
+                lineNumber: 50,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -578,7 +596,7 @@ const Register = ()=>{
                         children: "Last Name: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 32,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -588,13 +606,13 @@ const Register = ()=>{
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 33,
+                        lineNumber: 53,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 31,
+                lineNumber: 51,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -602,7 +620,7 @@ const Register = ()=>{
                 children: errors.lastName?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 36,
+                lineNumber: 56,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -612,7 +630,7 @@ const Register = ()=>{
                         children: "Nick Name: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 38,
+                        lineNumber: 58,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -620,13 +638,13 @@ const Register = ()=>{
                         ...register("nickName")
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 39,
+                        lineNumber: 59,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 37,
+                lineNumber: 57,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -634,7 +652,7 @@ const Register = ()=>{
                 children: errors.nickName?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 42,
+                lineNumber: 62,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -644,28 +662,22 @@ const Register = ()=>{
                         children: "e-mail: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 44,
+                        lineNumber: 64,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         id: "email",
                         type: "email",
-                        ...register("email", {
-                            required: "Email is required.",
-                            pattern: {
-                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                                message: 'Please enter a valid email address (e.g., user@example.com).'
-                            }
-                        })
+                        ...register("email")
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 45,
+                        lineNumber: 65,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 43,
+                lineNumber: 63,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -673,7 +685,7 @@ const Register = ()=>{
                 children: errors.email?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 54,
+                lineNumber: 68,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -683,25 +695,22 @@ const Register = ()=>{
                         children: "Password: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 56,
+                        lineNumber: 70,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         id: "password",
                         type: "password",
-                        minLength: 6,
-                        ...register("password", {
-                            required: "Password is required."
-                        })
+                        ...register("password")
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 58,
+                        lineNumber: 71,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 55,
+                lineNumber: 69,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -709,7 +718,7 @@ const Register = ()=>{
                 children: errors.password?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 60,
+                lineNumber: 73,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,25 +728,40 @@ const Register = ()=>{
                         children: "Date of Birth: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 62,
+                        lineNumber: 75,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "datePicker",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$datepicker$2f$dist$2f$index$2e$es$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Controller"], {
+                            control: control,
+                            name: "dateOfBirth",
+                            render: ({ field })=>{
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$datepicker$2f$dist$2f$index$2e$es$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                    selected: field.value,
+                                    onChange: field.onChange,
+                                    // dateFormat="yyyy-MM-dd"
+                                    placeholderText: "Select your birth date"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/pages/register/index.tsx",
+                                    lineNumber: 87,
+                                    columnNumber: 33
+                                }, void 0);
+                            }
+                        }, void 0, false, {
                             fileName: "[project]/src/pages/register/index.tsx",
-                            lineNumber: 64,
-                            columnNumber: 46
+                            lineNumber: 82,
+                            columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 64,
+                        lineNumber: 76,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 61,
+                lineNumber: 74,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -745,7 +769,7 @@ const Register = ()=>{
                 children: errors.dateOfBirth?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 67,
+                lineNumber: 99,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -755,22 +779,20 @@ const Register = ()=>{
                         children: "Gender: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 69,
+                        lineNumber: 101,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                         className: "gender",
                         id: "gender ",
-                        ...register("gender", {
-                            required: "Gender is required."
-                        }),
+                        ...register("gender"),
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                 value: "female",
                                 children: "female"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/register/index.tsx",
-                                lineNumber: 71,
+                                lineNumber: 103,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -778,7 +800,7 @@ const Register = ()=>{
                                 children: "male"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/register/index.tsx",
-                                lineNumber: 72,
+                                lineNumber: 104,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -786,19 +808,19 @@ const Register = ()=>{
                                 children: "other"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/register/index.tsx",
-                                lineNumber: 73,
+                                lineNumber: 105,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 70,
+                        lineNumber: 102,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 68,
+                lineNumber: 100,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -806,7 +828,7 @@ const Register = ()=>{
                 children: errors.gender?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 76,
+                lineNumber: 108,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -816,27 +838,21 @@ const Register = ()=>{
                         children: "Mobile: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 78,
+                        lineNumber: 110,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         id: "mobile",
-                        ...register("mobile", {
-                            required: "Mobile number is required.",
-                            pattern: {
-                                value: /^\+?[0-9]{7,15}$/,
-                                message: "Please enter a valid mobile number."
-                            }
-                        })
+                        ...register("mobile")
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 79,
+                        lineNumber: 111,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 77,
+                lineNumber: 109,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -844,7 +860,7 @@ const Register = ()=>{
                 children: errors.mobile?.message
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 81,
+                lineNumber: 113,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -853,20 +869,20 @@ const Register = ()=>{
                         children: "Address: "
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 83,
+                        lineNumber: 115,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         ...register("address")
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 84,
+                        lineNumber: 116,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 82,
+                lineNumber: 114,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -874,7 +890,7 @@ const Register = ()=>{
                 children: "Register"
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 86,
+                lineNumber: 118,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -885,14 +901,14 @@ const Register = ()=>{
                         alt: "googleLogo"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 87,
+                        lineNumber: 119,
                         columnNumber: 47
                     }, this),
                     "Register with Google"
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 87,
+                lineNumber: 119,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -906,13 +922,13 @@ const Register = ()=>{
                         children: "Login"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/register/index.tsx",
-                        lineNumber: 88,
+                        lineNumber: 120,
                         columnNumber: 33
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 88,
+                lineNumber: 120,
                 columnNumber: 13
             }, this),
             isSubmitted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -920,21 +936,21 @@ const Register = ()=>{
                 children: "Register successfully, please sign in."
             }, void 0, false, {
                 fileName: "[project]/src/pages/register/index.tsx",
-                lineNumber: 89,
+                lineNumber: 121,
                 columnNumber: 30
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/register/index.tsx",
-        lineNumber: 24,
+        lineNumber: 44,
         columnNumber: 9
     }, this);
 };
-_s(Register, "eWCEzuO9G+Nqn2d8DAN/xUyKs9M=", false, function() {
+_s(Register, "X1tjkX7vNe6Yzli7YssC5JDfCMM=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"],
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$utils$2f$useAuth$2e$tsx__$5b$client$5d$__$28$ecmascript$29$__["useAuth"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["useForm"]
     ];
 });
 _c = Register;
@@ -949,7 +965,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
 {
-const PAGE_PATH = "/login";
+const PAGE_PATH = "/register";
 (window.__NEXT_P = window.__NEXT_P || []).push([
     PAGE_PATH,
     ()=>{

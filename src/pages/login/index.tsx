@@ -1,19 +1,29 @@
 // src/pages/login/index.tsx
-import { IFormInput } from '@/types/types';
 import { useAuth } from '@/utils/useAuth';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/navigation';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors }, control } = useForm<IFormInput>();
     const {
         isSubmitted,
         setIsSubmitted,
         existUser
     } = useAuth();
     const router = useRouter()
-    const onSubmit: SubmitHandler<IFormInput> = (data) => {
-
+    const loginSchema = yup
+        .object()
+        .shape({
+            email: yup.string().required(),
+            password: yup.string().required()
+        })
+        .required();
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(loginSchema)
+    });
+    const onSubmit = (data: { email: string; password: string; }) => {
+        setIsSubmitted(false)
         switch (true) {
             case !(data.email === existUser.email):
                 alert("Email has  not been registered, Please register. ")
@@ -26,20 +36,17 @@ const Login = () => {
                 break
         }
         alert(JSON.stringify(data))
-
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
-
             <div>
                 <label htmlFor='email'>e-mail: </label>
-                <input id='email' type='email'  {...register("email", { required: true })} />
+                <input id='email' type='email'  {...register("email")} />
             </div>
             <span className='message error'>{errors.email?.message}</span>
-
             <div>
                 <label htmlFor='password'>Password: </label>
-                <input id='password' type='password' minLength={6} {...register("password", { required: "Password is required." })} />
+                <input id='password' type='password' {...register("password")} />
             </div>
             <span className='message error'>{errors.password?.message}</span>
             <button className='signin' >Sign in</button>
