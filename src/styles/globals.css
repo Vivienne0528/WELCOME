@@ -9,7 +9,6 @@
 .message {
   @apply text-[0.8rem] mt-[10px];
 }
-
 .message.error {
   @apply text-red-500;
 }

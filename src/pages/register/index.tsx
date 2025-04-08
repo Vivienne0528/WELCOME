@@ -1,79 +1,86 @@
 // src/pages/register/index.tsx
 import { Controller, useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"
-import { useRouter } from 'next/navigation';
+import "react-datepicker/dist/react-datepicker.css";
 import { useAuth } from "@/utils/useAuth";
-import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Register = () => {
-    const router = useRouter()
-    const { isSubmitted, setIsSubmitted, existUser } = useAuth();
-    const registerSchema = yup
-        .object()
-        .shape({
-            email: yup.string().email().required(),
-            password: yup.string().required("Password is required")
-                .matches(
-                    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{8,}$/,
-                    "Password must be at least 8 characters, include 1 uppercase letter, 1 number, and 1 special character"
-                ),
-            firstName: yup.string().required(),
-            lastName: yup.string().required(),
-            nickName: yup.string(),
-            dateOfBirth: yup.date().required(),
-            gender: yup.string().required(),
-            mobile: yup.string().required(),
-            address: yup.string().required(),
-        })
-        .required();
-    {/* password:至少一个大写,至少一个符号, 至少一个数字,至少8位 */ }
-    const { register, handleSubmit, formState: { errors }, control } = useForm({
-        resolver: yupResolver(registerSchema)
+    const { isSubmitted, router, schema, registerOnSubmit } = useAuth();
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        control,
+    } = useForm({
+        resolver: yupResolver(schema),
     });
-    const onSubmit = (data: { email: string; }) => {
-        if (existUser.email == data.email) {
-            alert("Email had been registered, Please sign in.")
-        } else {
-            setIsSubmitted(true);
-            alert(JSON.stringify(data))
-        }
-    };
+
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col'>
+        <form onSubmit={handleSubmit(registerOnSubmit)} className="flex flex-col">
             <div>
-                <label className="login-label" htmlFor='firstName'>First Name: </label>
-                <input id='firstName' {...register("firstName", { required: "First name is required." })} className='login-input' />
-
+                <label className="login-label" htmlFor="firstName">
+                    First Name:{" "}
+                </label>
+                <input
+                    id="firstName"
+                    {...register("firstName", { required: "First name is required." })}
+                    className="login-input"
+                />
             </div>
-            <span className='message error'>{errors.firstName?.message}</span>
+            <span className="message error">{errors.firstName?.message}</span>
             <div>
-                <label className="login-label" htmlFor='lastName'>Last Name: </label>
-                <input id='lastName' {...register("lastName", { required: "Last name is required." })} className='login-input' />
-
+                <label className="login-label" htmlFor="lastName">
+                    Last Name:{" "}
+                </label>
+                <input
+                    id="lastName"
+                    {...register("lastName", { required: "Last name is required." })}
+                    className="login-input"
+                />
             </div>
-            <span className='message error'>{errors.lastName?.message}</span>
+            <span className="message error">{errors.lastName?.message}</span>
             <div>
-                <label className="login-label" htmlFor='nickName'>Nick Name: </label>
-                <input id='nickName' {...register("nickName")} className='login-input' />
-
+                <label className="login-label" htmlFor="nickName">
+                    Nick Name:{" "}
+                </label>
+                <input
+                    id="nickName"
+                    {...register("nickName")}
+                    className="login-input"
+                />
             </div>
-            <span className='message error'>{errors.nickName?.message}</span>
+            <span className="message error">{errors.nickName?.message}</span>
             <div>
-                <label className="login-label" htmlFor='email'>e-mail: </label>
-                <input id='email' type='email'  {...register("email")} className='login-input' />
-
+                <label className="login-label" htmlFor="email">
+                    e-mail:{" "}
+                </label>
+                <input
+                    id="email"
+                    type="email"
+                    {...register("email")}
+                    className="login-input"
+                />
             </div>
-            <span className='message error'>{errors.email?.message}</span>
+            <span className="message error">{errors.email?.message}</span>
             <div>
-                <label className="login-label" htmlFor='password'>Password: </label>
-                <input id='password' type='password' {...register("password")} className='login-input' />
+                <label className="login-label" htmlFor="password">
+                    Password:{" "}
+                </label>
+                <input
+                    id="password"
+                    type="password"
+                    {...register("password")}
+                    className="login-input"
+                />
             </div>
-            <span className='message error'>{errors.password?.message}</span>
+            <span className="message error">{errors.password?.message}</span>
             <div>
-                <label className="login-label" htmlFor='dateOfBirth'>Date of Birth: </label>
-                <div className="float-right login-label" >
+                <label className="login-label" htmlFor="dateOfBirth">
+                    Date of Birth:{" "}
+                </label>
+                <div className="float-right login-label">
                     {/* <DatePicker
                         selected={dateOfBirth}
                         onChange={(date) => setDateOfBirth(date)}
@@ -94,31 +101,64 @@ const Register = () => {
                         }}
                     />
                 </div>
-
             </div>
-            <span className='message error'>{errors.dateOfBirth?.message}</span>
+            <span className="message error">{errors.dateOfBirth?.message}</span>
             <div>
-                <label className="login-label" htmlFor='gender'>Gender: </label>
-                <select className='float-right login-label' id='gender '{...register("gender")}>
+                <label className="login-label" htmlFor="gender">
+                    Gender:{" "}
+                </label>
+                <select
+                    className="float-right login-label"
+                    id="gender "
+                    {...register("gender")}
+                >
                     <option value="female">female</option>
                     <option value="male">male</option>
                     <option value="other">other</option>
                 </select>
             </div>
-            <span className='message error'>{errors.gender?.message}</span>
+            <span className="message error">{errors.gender?.message}</span>
             <div>
-                <label className="login-label" htmlFor='mobile'>Mobile: </label>
-                <input id='mobile' {...register("mobile")} className='login-input' />
+                <label className="login-label" htmlFor="mobile">
+                    Mobile:{" "}
+                </label>
+                <input id="mobile" {...register("mobile")} className="login-input" />
             </div>
-            <span className='message error'>{errors.mobile?.message}</span>
+            <span className="message error">{errors.mobile?.message}</span>
             <div>
-                <label className="login-label" htmlFor='address'>Address: </label>
-                <input id='address' {...register("address")} className='login-input' />
+                <label className="login-label" htmlFor="address">
+                    Address:{" "}
+                </label>
+                <input id="address" {...register("address")} className="login-input" />
             </div>
-            <button className='font-semibold p-[12px] rounded-[8px] bg-black text-white mt-[40px] mb-[20px]' >Register</button>
-            <button className='font-semibold p-[12px] rounded-[8px] border-[2px] border-black bg-white text-black flex justify-center'><img className='w-[25px] mr-[10px]' src="/img/google.png" alt="googleLogo" />Register with Google</button>
-            <p className="text-center">Have an account? <a className='underline' href="#" onClick={() => { router.push('/login') }}>Login</a></p>
-            {isSubmitted && (<p className="message text-green-500 text-center">Register successfully, please sign in.</p>)}
+            <button className="font-semibold p-[12px] rounded-[8px] bg-black text-white mt-[40px] mb-[20px]">
+                Register
+            </button>
+            <button className="font-semibold p-[12px] rounded-[8px] border-[2px] border-black bg-white text-black flex justify-center">
+                <img
+                    className="w-[25px] mr-[10px]"
+                    src="/img/google.png"
+                    alt="googleLogo"
+                />
+                Register with Google
+            </button>
+            <p className="text-center">
+                Have an account?{" "}
+                <a
+                    className="underline"
+                    href="#"
+                    onClick={() => {
+                        router.push("/login");
+                    }}
+                >
+                    Login
+                </a>
+            </p>
+            {isSubmitted && (
+                <p className="message text-green-500 text-center">
+                    Register successfully, please sign in.
+                </p>
+            )}
         </form>
     );
 };
