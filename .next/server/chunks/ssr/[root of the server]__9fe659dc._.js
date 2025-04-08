@@ -109,156 +109,163 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$run
 ;
 function App({ Component, pageProps }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("main", {
+        className: "flex h-screen w-full md:flex-row flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
-                className: "login-section",
+                className: "w-full min-w-[25rem] mt-[30px] md:mx-[100px] p-[8px]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
-                        className: "welcome",
+                        className: "mb-[30px]",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
                                 src: "/img/logo.png",
-                                alt: "logo"
-                            }, void 0, false, {
-                                fileName: "[project]/src/pages/_app.tsx",
-                                lineNumber: 9,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
-                                children: "Welcome back"
+                                alt: "logo",
+                                className: "w-[60px] mb-[15px]"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 10,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
-                                children: "Welcome back! Please enter your details."
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                                className: "text-2xl mb-[10px]",
+                                children: "Welcome back"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 11,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                className: "text-xl text-gray-600",
+                                children: "Welcome back! Please enter your details."
+                            }, void 0, false, {
+                                fileName: "[project]/src/pages/_app.tsx",
+                                lineNumber: 12,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/_app.tsx",
-                        lineNumber: 8,
+                        lineNumber: 9,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(Component, {
                         ...pageProps
                     }, void 0, false, {
                         fileName: "[project]/src/pages/_app.tsx",
-                        lineNumber: 13,
+                        lineNumber: 14,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/_app.tsx",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
-                className: "intro-section",
+                className: "bg-[url('/img/background.png')] bg-cover bg-center text-white min-w-[28rem] px-[60px] pt-[300px]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
-                        className: "square-group",
+                        className: "relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                className: "text-[1.8rem] border-green-300 border-solid border-[5px]",
                                 children: ' "Untitled truly has solved all our design and content problems, freeing up our time to work on more important things. We can\'t imagine working without it."'
-                            }, void 0, false, {
-                                fileName: "[project]/src/pages/_app.tsx",
-                                lineNumber: 18,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "square-one"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 19,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "square-two"
+                                className: "square top-[-0.6rem] left-[-0.6rem]"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 20,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "square-three"
+                                className: "square top-[-0.6rem] right-[-0.6rem]"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 21,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                                className: "square-four"
+                                className: "square bottom-[-0.6rem] left-[-0.6rem]"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
                                 lineNumber: 22,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                className: "square bottom-[-0.6rem] right-[-0.6rem]"
+                            }, void 0, false, {
+                                fileName: "[project]/src/pages/_app.tsx",
+                                lineNumber: 23,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/_app.tsx",
-                        lineNumber: 17,
+                        lineNumber: 18,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "author",
+                        className: "text-[1.2rem] font-semibold flex justify-between",
                         children: [
                             " ",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
                                 children: "Mischca Sullivan"
                             }, void 0, false, {
                                 fileName: "[project]/src/pages/_app.tsx",
-                                lineNumber: 25,
-                                columnNumber: 34
+                                lineNumber: 26,
+                                columnNumber: 76
                             }, this),
                             " ★★★★★"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/_app.tsx",
-                        lineNumber: 25,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                        className: "company",
+                        className: "text-[1.2rem] flex justify-between",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("span", {
+                                className: "flex items-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                                        className: " h-[20px] mr-[5px]",
                                         src: "/img/smallLogo.png",
                                         alt: "smallLogo"
                                     }, void 0, false, {
                                         fileName: "[project]/src/pages/_app.tsx",
-                                        lineNumber: 26,
-                                        columnNumber: 40
+                                        lineNumber: 27,
+                                        columnNumber: 97
                                     }, this),
                                     " Bolt Agency"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/pages/_app.tsx",
-                                lineNumber: 26,
-                                columnNumber: 34
+                                lineNumber: 27,
+                                columnNumber: 61
                             }, this),
                             " ← →"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/pages/_app.tsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/_app.tsx",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/_app.tsx",
-        lineNumber: 6,
+        lineNumber: 7,
         columnNumber: 5
     }, this);
 }
@@ -399,11 +406,12 @@ const Login = ()=>{
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
         onSubmit: handleSubmit(onSubmit),
-        className: "login-form",
+        className: "flex flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                        className: "login-label",
                         htmlFor: "email",
                         children: "e-mail: "
                     }, void 0, false, {
@@ -414,7 +422,8 @@ const Login = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                         id: "email",
                         type: "email",
-                        ...register("email")
+                        ...register("email"),
+                        className: "login-input"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 44,
@@ -437,6 +446,7 @@ const Login = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                        className: "login-label",
                         htmlFor: "password",
                         children: "Password: "
                     }, void 0, false, {
@@ -447,7 +457,8 @@ const Login = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                         id: "password",
                         type: "password",
-                        ...register("password")
+                        ...register("password"),
+                        className: "login-input"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 49,
@@ -468,7 +479,7 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                className: "signin",
+                className: " font-semibold p-[12px] rounded-[8px] bg-black text-white mt-[40px] mb-[20px]",
                 children: "Sign in"
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
@@ -476,15 +487,16 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                className: "google-signin",
+                className: "font-semibold p-[12px] rounded-[8px] border-[2px] border-black bg-white text-black flex justify-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                        className: "w-[25px] mr-[10px]",
                         src: "/img/google.png",
                         alt: "googleLogo"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 53,
-                        columnNumber: 47
+                        columnNumber: 136
                     }, this),
                     "Sign in with Google"
                 ]
@@ -494,9 +506,11 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                className: "text-black-[0.8rem] text-center mt-[30px]",
                 children: [
-                    "Have an account? ",
+                    "Need an account? ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        className: "underline",
                         href: "#",
                         onClick: ()=>{
                             router.push('/register');
@@ -505,7 +519,7 @@ const Login = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 54,
-                        columnNumber: 34
+                        columnNumber: 87
                     }, this)
                 ]
             }, void 0, true, {
@@ -514,7 +528,7 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             isSubmitted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                className: "message success",
+                className: "message text-green-500 text-center",
                 children: "Login successfully."
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",

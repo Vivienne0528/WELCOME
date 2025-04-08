@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///Users/yuwei/Desktop/welcome-next-pages/src/styles/forms.css"],"sourcesContent":["/* .error-message {\n  color: red;\n  margin-bottom: 3px;\n}\n\n.form div {\n  display: flex;\n  margin-bottom: 3px;\n}\n.form label {\n  width: 100px;\n  font-size: 1rem;\n  color: #666;\n  margin-right: 10px;\n}\n\n.form input {\n  font-size: 1rem;\n  color: #666;\n  border: none;\n  border-bottom: 1px solid #666;\n  height: 1.2rem;\n  width: 220px;\n}\n\n.form button {\n  background-color: #fff;\n  color: #000;\n  font-size: 1rem;\n  width: 332px;\n  height: 30px;\n  border-radius: 8px;\n}\n.form p {\n  font-size: 0.8rem;\n  text-align: center;\n  color: black;\n  margin-top: 30px;\n}\n.a {\n  color: #000;\n  font-weight: 600;\n} */\n"],"names":[],"mappings":"","debugId":null}}]
-}

@@ -549,11 +549,12 @@ const Login = ()=>{
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
         onSubmit: handleSubmit(onSubmit),
-        className: "login-form",
+        className: "flex flex-col",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                        className: "login-label",
                         htmlFor: "email",
                         children: "e-mail: "
                     }, void 0, false, {
@@ -564,7 +565,8 @@ const Login = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         id: "email",
                         type: "email",
-                        ...register("email")
+                        ...register("email"),
+                        className: "login-input"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 44,
@@ -587,6 +589,7 @@ const Login = ()=>{
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                        className: "login-label",
                         htmlFor: "password",
                         children: "Password: "
                     }, void 0, false, {
@@ -597,7 +600,8 @@ const Login = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         id: "password",
                         type: "password",
-                        ...register("password")
+                        ...register("password"),
+                        className: "login-input"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 49,
@@ -618,7 +622,7 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "signin",
+                className: " font-semibold p-[12px] rounded-[8px] bg-black text-white mt-[40px] mb-[20px]",
                 children: "Sign in"
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
@@ -626,15 +630,16 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                className: "google-signin",
+                className: "font-semibold p-[12px] rounded-[8px] border-[2px] border-black bg-white text-black flex justify-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        className: "w-[25px] mr-[10px]",
                         src: "/img/google.png",
                         alt: "googleLogo"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 53,
-                        columnNumber: 47
+                        columnNumber: 136
                     }, this),
                     "Sign in with Google"
                 ]
@@ -644,9 +649,11 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "text-black-[0.8rem] text-center mt-[30px]",
                 children: [
-                    "Have an account? ",
+                    "Need an account? ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        className: "underline",
                         href: "#",
                         onClick: ()=>{
                             router.push('/register');
@@ -655,7 +662,7 @@ const Login = ()=>{
                     }, void 0, false, {
                         fileName: "[project]/src/pages/login/index.tsx",
                         lineNumber: 54,
-                        columnNumber: 34
+                        columnNumber: 87
                     }, this)
                 ]
             }, void 0, true, {
@@ -664,7 +671,7 @@ const Login = ()=>{
                 columnNumber: 13
             }, this),
             isSubmitted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "message success",
+                className: "message text-green-500 text-center",
                 children: "Login successfully."
             }, void 0, false, {
                 fileName: "[project]/src/pages/login/index.tsx",
